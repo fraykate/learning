@@ -1,0 +1,27 @@
+import turtle
+
+response = ("5 30 green red")
+response_list = response.split()
+#inputs = input("Hey stranger! Can you please tell me the number of sides, length of each side, line color and fill color for a polygon?")
+
+sides = int(response_list[0])
+length = int(response_list[1])
+linecolor = response_list[2]
+fillcolor = response_list[3]
+
+angle = 180 - (((180*sides)-360) / sides)
+
+print(sides, length, linecolor, fillcolor, angle)
+screen = turtle.Screen()
+polly = turtle.Turtle()
+
+polly.shape()
+polly.color(linecolor)
+polly.fillcolor = (fillcolor)
+polly.begin_fill()
+
+for side in range(sides):
+    polly.forward(length)
+    polly.left(angle)
+
+polly.end_fill()
